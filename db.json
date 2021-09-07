@@ -1,0 +1,60 @@
+{
+  "file": "validations",
+  "version": 0.1,
+  "environment": 0,
+  "active": true,
+  "effective": "2021-08-22T00:00:00.000Z",
+  "end": null,
+  "action": "if end date mentioned updated URL goes here",
+  "validators": [
+    {
+      "id": "login-page-id",
+      "fields": [
+        {
+          "id": "username-field-id",
+          "rules": [
+            {
+              "id": "range-rule-id",
+              "type": "range",
+              "name": "length",
+              "mutual": "format rule id goes here",
+              "qualifier": {
+                "min": 7,
+                "max": 15
+              },
+              "notify": [
+                "error messages goes here"
+              ],
+              "actions": [
+                "ok"
+              ]
+            },
+            {
+              "id": "format-rule-id",
+              "type": "format",
+              "name": "regex",
+              "qualifier": {
+                "indexed": "^(\\w{2,5})([*&$#@_-]{1,2})(\\d{1,4})(\\w{2,4})$"
+              },
+              "notify": [
+                "error messages goes here"
+              ],
+              "actions": [
+                "ok"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "find-my-account-page-id",
+      "fields": [
+        {
+          "id": "username-field-id",
+          "copy": "copy-of-other-field-id"
+        }
+      ]
+    }
+  ]
+}
